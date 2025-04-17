@@ -16,7 +16,7 @@ endif()
 include_directories(${RAYLIB_PATH}/include)
 link_directories(${RAYLIB_PATH}/lib)
 
-add_executable(raylib_app main.cpp spaceship.cpp game.cpp laser.cpp)
+add_executable(raylib_app main.cpp spaceship.cpp game.cpp laser.cpp block.cpp obstacle.cpp alien.cpp)
 
 target_link_libraries(raylib_app
     raylib
