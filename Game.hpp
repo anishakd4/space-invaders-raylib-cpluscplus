@@ -3,6 +3,8 @@
 #include "spaceship.hpp"
 #include "obstacle.hpp"
 #include "alien.hpp"
+#include "mysteryship.hpp"
+
 class Game
 {
     public:
@@ -26,6 +28,9 @@ class Game
         std::vector<Laser> alienLasers;
         constexpr static float alienLaserShootInterval = 0.35;
         float timeLastAlienFired;
+        MysteryShip mysteryShip;
+        float mysteryShipSpawnInterval;
+        float timeLastSpawn;
 };
 
 //In C++ we can use the constexpr keyword to specify that a variable is a constant expression and can be initialized at compile time.
