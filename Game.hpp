@@ -13,6 +13,11 @@ class Game
         void Draw();
         void Update();
         void HandleInput();
+        bool run;
+        int lives;
+        int score;
+        int highScore;
+        Music music;
 
     private:
         void DeleteInactiveLasers();
@@ -21,6 +26,7 @@ class Game
         void MoveAliens();
         void MoveDownAliens(int distance);
         void AlienShootLaser();
+        void CheckForCollisions();
         Spaceship spaceship;
         std::vector<Obstacle> obstacles;
         std::vector<Alien> aliens;
@@ -31,6 +37,13 @@ class Game
         MysteryShip mysteryShip;
         float mysteryShipSpawnInterval;
         float timeLastSpawn;
+        void GameOver();
+        void Reset();
+        void InitGame();
+        void CheckForHighScore();
+        void saveHighScoreToFile(int highScore);
+        int loadHighScoreFromFile();
+        Sound explosionSound;
 };
 
 //In C++ we can use the constexpr keyword to specify that a variable is a constant expression and can be initialized at compile time.
